@@ -51,7 +51,7 @@ fs.readdir("./commands/", (err, files) => {
 const MIN_INTERVAL = 1000*300
 setInterval(function(){
     const life = Math.floor(Math.random()*3);
-    switch life{
+    switch (life){
       case 0:
         client.channels.cache.find(ch => ch.name === 'testes-do-magnu').send('To vivo');
         break;
