@@ -48,4 +48,9 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+const MIN_INTERVAL = 1000*300
+setInterval(function(){
+      client.channels.cache.find(ch => ch.name === 'testes-do-magnu').send('To vivo');
+}, MIN_INTERVAL)
+
 client.login(config.token);
