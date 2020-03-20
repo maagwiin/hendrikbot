@@ -21,7 +21,7 @@ express()
 
 client.on('ready', () => {
   client.user.setActivity('pedra em aluno de BSI');
-  console.log('Bot ativo');
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
 fs.readdir("./events/", (err, files) => {
