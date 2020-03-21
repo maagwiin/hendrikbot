@@ -48,8 +48,10 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-const MIN_INTERVAL = 1000*300
-setInterval(function(){
+
+var http = require('https');
+setInterval(() => {
+    http.get('https://hendrikbode.herokuapp.com/');
     const life = Math.floor(Math.random()*3);
     switch (life){
       case 0:
@@ -62,6 +64,7 @@ setInterval(function(){
         client.channels.cache.find(ch => ch.name === 'testes-do-magnu').send('To vivo 3');
         break;
     }
-}, MIN_INTERVAL)
+}, 1000*60*5);
+
 
 client.login(config.token);
