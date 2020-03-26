@@ -20,7 +20,7 @@ express()
 
 
 client.on('ready', () => {
-  client.user.setActivity('pedra em aluno de BSI');
+  client.user.setActivity('pedra em quem tá na rua');
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
