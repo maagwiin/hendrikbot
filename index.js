@@ -3,22 +3,30 @@ if (process.version.slice(1).split('.')[0] < 8) throw new Error('Node 8.0.0 or h
 const Discord = require("discord.js");                          //requisição da api do discord
 const Enmap = require("enmap");                                 //requisição de database
 const fs = require("fs");                                       //requisição do file system
+const express = require('express');  
+const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
+const path = require('path'); 
 
-const client = new Discord.Client();                            //cria o bot com o nome client
 const config = require("./config.json");                        //importa o JSON de configuração
 
+const client = new Discord.Client();                            //cria o bot com o nome client
 client.config = config;                                         //atribui a configuração ao client
 
-const express = require('express');                             //requisição da estrutura para o app
-const path = require('path');                                   //requisição do modulo path
+const app = express();                         
+                                
 const PORT = process.env.PORT || 5000;                          //define a porta para a aplicação
-
-express()                                                       //configuração para manter on no heroku
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`))
+                                    
+//.use(express.static(path.join(__dirname, 'public')))
+//.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.get('/', (req, res) => res.render('pages/index'));
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 
 client.on('ready', () => {
