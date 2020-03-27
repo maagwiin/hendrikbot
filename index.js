@@ -14,7 +14,7 @@ const path = require('path');                                   //requisição d
 const PORT = process.env.PORT || 5000;                          //define a porta para a aplicação
 
 express()                                                       //configuração para manter on no heroku
-  .use(express.static(path.join(__dirname, '/public')))
+  .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
