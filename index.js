@@ -13,6 +13,7 @@ const config = require("./config.json");                        //importa o JSON
 const client = new Discord.Client();                            //cria o bot com o nome client
 client.commands = new Enmap();                                  //mapeia os comandos do bot
 client.config = config;                                         //atribui a configuração ao bot
+client.startTime = Date.now()                                   //salva o momento de start
 
 const app = express();                                          //cria a aplicação web
                                 
