@@ -17,8 +17,8 @@ const app = express();
                                 
 const PORT = process.env.PORT || 5000;                          //define a porta para a aplicação
                                     
-//.use(express.static(path.join(__dirname, 'public')))
-//.set('views', path.join(__dirname, 'views'))
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(bodyParser.json());
