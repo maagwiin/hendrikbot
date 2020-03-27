@@ -46,7 +46,7 @@ fs.readdir("./commands/", (err, files) => {                     //le a pasta com
   if (err) return console.error(err);                           //retorna um possível erro ao console
   files.forEach(file => {                                       //para cada arquivo encontrado
     if (!file.endsWith(".js")) return;                          //ignorar arquivos que não sejam .js
-    let props = require(`./commands/${file}`);                  //carrega o arquivo de evento
+    let props = require(`./commands/${file}`);                  //carrega o arquivo de comando
     let commandName = file.split(".")[0];                       //obtem o nome do evento pelo nome do arquivo
     console.log(`Attempting to load command ${commandName}`);   //mostra que o comando foi carregado
     client.commands.set(commandName, props);                    //armazena o conteudo dos comandos no enmap, mas não executa
