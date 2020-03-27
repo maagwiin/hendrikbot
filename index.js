@@ -57,6 +57,7 @@ fs.readdir("./commands/", (err, files) => {                     //le a pasta com
 var http = require('https');                                    //loop de requisição web para manter o bot online
 setInterval(() => {                                             //define um intervalo
     http.get('https://hendrikbode.herokuapp.com/');             //requisição
+    console.log('check');                                       //checagem pelo console            
 }, 1000*60*5);                                                  //a cada 5 minutos
 
 
