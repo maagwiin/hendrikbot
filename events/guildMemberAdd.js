@@ -17,4 +17,6 @@ module.exports = (client, member) => {
       channel.send(`Devia estar estudando cálculo, ${member}, seja bem vindo(a)!`);
     break;
   }
+
+  channel.send("Leia as regras em #regras e se habilite em #matricular")
 };
