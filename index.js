@@ -9,10 +9,12 @@ const bodyParser = require('body-parser');                      //requisição b
 const path = require('path');                                   //requisição do modulo path
 
 const config = require("./config.json");                        //importa o JSON de configuração
+const ceca = require("./arquivos/ceca.json");
 
 const client = new Discord.Client();                            //cria o bot com o nome client
 client.commands = new Enmap();                                  //mapeia os comandos do bot
-client.config = config;                                         //atribui a configuração ao bot
+client.config = config;
+client.ceca = ceca;                                         //atribui a configuração ao bot
 client.startTime = Date.now()                                   //salva o momento de start
 
 const app = express();                                          //cria a aplicação web
