@@ -2,7 +2,3 @@ node_modules/
 package-lock.json
 old1.js
 old2.js
-procfile
-config.json
-ceca.csv
-ceca.json
