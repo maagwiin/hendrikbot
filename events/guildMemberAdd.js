@@ -3,7 +3,6 @@ module.exports = (client, member) => {
   const rulesch = member.guild.channels.cache.find(ch => ch.name === 'regras');
 
   
-
   if (!channel) return;
 
   let r = Math.floor(Math.random()*4);
@@ -21,4 +20,5 @@ module.exports = (client, member) => {
       channel.send(`Devia estar estudando cálculo, ${member}, seja bem vindo(a)!`);
     break;
   }
+  channel.send(`Lembre-se de ler as regras em ${rulesch}`);
 };
