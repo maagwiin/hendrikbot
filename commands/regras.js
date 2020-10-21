@@ -1,7 +1,7 @@
 const {MessageEmbed} = require("discord.js");
-const rulesch = member.guild.channels.cache.find(ch => ch.name === 'regras');
 
 exports.run = (client, message, args) => {
+    const rulesch = message.guild.channels.cache.find(ch => ch.name === 'regras');
     const embed = new MessageEmbed()
  
         .setTitle('REGRAS')
