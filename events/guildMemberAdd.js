@@ -1,7 +1,6 @@
 module.exports = (client, member) => {
   const channel = member.guild.channels.cache.find(ch => ch.name === 'boas-vindas');
   const rulesch = member.guild.channels.cache.find(ch => ch.name === 'regras');
-  const loginch = member.guild.channels.cache.find(ch => ch.name === 'matricular');
 
   
 
@@ -22,6 +21,4 @@ module.exports = (client, member) => {
       channel.send(`Devia estar estudando cálculo, ${member}, seja bem vindo(a)!`);
     break;
   }
-
-  channel.send(`Leia as regras em ${rulesch} e habilite-se em ${loginch}`)
 };
